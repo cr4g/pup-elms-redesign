@@ -1,0 +1,76 @@
+/* ---------- Badge ---------- */
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 2px 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+.badge-warning { background: var(--gold-light); border-color: var(--gold); color: #6b4e00; }
+.badge-success { background: #e8f5e9; border-color: var(--success); color: var(--success); }
+.badge-danger  { background: #ffebee; border-color: var(--danger); color: var(--danger); }
+.badge-neutral { background: #f1eeeb; border-color: var(--border); color: var(--muted); }
+
+/* ---------- Modal ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+  z-index: 100;
+}
+.modal {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  width: 100%;
+  max-width: 440px;
+}
+.modal-actions {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: flex-end;
+  margin-top: var(--space-4);
+}
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: var(--space-4);
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  color: var(--white);
+  font-weight: 600;
+  z-index: 200;
+  max-width: calc(100% - 32px);
+}
+.toast-success { background: var(--success); }
+.toast-error { background: var(--danger); }
+.toast button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* ---------- Form helpers (para sa Join Course, etc.) ---------- */
+.field-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: var(--font-base);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-family: inherit;
+}
+.field-input.invalid { border-color: var(--danger); }
+.field-error { color: var(--danger); font-size: 0.9rem; margin-top: var(--space-1); }

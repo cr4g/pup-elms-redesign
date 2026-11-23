@@ -1,0 +1,28 @@
+:root {
+  /* PUP colors */
+  --maroon: #800000;
+  --maroon-dark: #5c0000;
+  --gold: #f2b705;
+  --gold-light: #fff3d6;
+
+  /* Neutrals */
+  --text: #222222;
+  --muted: #666666;
+  --border: #d9d4cf;
+  --bg: #faf8f6;
+  --white: #ffffff;
+
+  /* Status */
+  --success: #2e7d32;
+  --danger: #c62828;
+
+  /* Sizing */
+  --radius: 8px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --font-base: 16px;
+  --max-width: 1100px;
+}

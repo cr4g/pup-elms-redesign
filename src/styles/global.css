@@ -1,0 +1,186 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: var(--font-base);
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+}
+
+h1, h2, h3 {
+  margin: 0 0 var(--space-2);
+}
+
+a {
+  color: var(--maroon);
+}
+
+/* Accessibility: visible keyboard focus */
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-3);
+}
+
+.app-header {
+  background: var(--maroon);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+}
+
+/* Logo (clickable, pabalik sa Home) */
+.app-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.app-logo img {
+  width: 44px;
+  height: 44px;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--white);
+}
+
+.app-logo:hover img {
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+  overflow-x: auto;
+}
+
+.nav-link {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  padding: var(--space-2) var(--space-1);
+  white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-base);
+  font-family: inherit;
+}
+
+.nav-link:hover {
+  color: var(--gold);
+}
+
+.nav-link.active {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.header-actions {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+/* ---------- Icon buttons (header) ---------- */
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.icon-btn img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--white);
+  display: block;
+}
+
+.icon-btn:hover img {
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  border: 2px solid var(--maroon);
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-size: var(--font-base);
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--maroon);
+  color: var(--white);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--maroon-dark);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--maroon);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-danger-link {
+  background: none;
+  border: none;
+  color: var(--danger);
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 640px) {
+  .app-header {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  .app-nav {
+    order: 3;
+    width: 100%;
+    flex-basis: 100%;
+  }
+}
