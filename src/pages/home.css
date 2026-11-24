@@ -1,3 +1,12 @@
+.home-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('../assets/backgrounds/home-bg.jpg') center / cover no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+}
+
 .home-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -9,7 +9,7 @@ export default function StudentHome() {
 
   const currentCourses = courses.filter((c) => c.semester === 'current')
 
-  // Due Soon = hindi pa naka-submit, pinakamalapit na deadline muna
+ 
   const dueSoon = assignments
     .filter((a) => !submissions[a.id])
     .sort((a, b) => new Date(a.dueAt) - new Date(b.dueAt))
@@ -19,7 +19,7 @@ export default function StudentHome() {
     dueSoon.filter((a) => a.courseId === courseId).length
 
   return (
-    <div className="home-grid">
+    <div className="home-grid home-page">
       <div>
         <h1 className="home-welcome">Welcome back, {student.name}!</h1>
 

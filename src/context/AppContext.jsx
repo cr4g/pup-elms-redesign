@@ -25,6 +25,7 @@ function load() {
 }
 
 export function AppProvider({ children }) {
+  const [user, setUser] = useState(() => load()?.user ?? null)
   const [courses, setCourses] = useState(() => load()?.courses ?? initialCourses)
   const [submissions, setSubmissions] = useState(() => load()?.submissions ?? {})
   const [toast, setToast] = useState(null)
@@ -32,11 +33,14 @@ export function AppProvider({ children }) {
   // Persist para di mawala pagka-refresh
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ courses, submissions }))
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify({ user, courses, submissions }),
+      )
     } catch {
       /* ignore */
     }
-  }, [courses, submissions])
+  }, [user, courses, submissions])
 
   // Auto-hide ng toast after 4 seconds
   useEffect(() => {
@@ -48,6 +52,18 @@ export function AppProvider({ children }) {
   const showToast = useCallback((message, type = 'success') => {
     setToast({ message, type, id: Date.now() })
   }, [])
+
+  // info = result ng parseStudentNumber() na valid
+  const login = (info) => {
+    setUser({
+      studentNumber: info.studentNumber,
+      campusCode: info.campusCode,
+      campus: info.campus,
+      status: info.status,
+    })
+  }
+
+  const logout = () => setUser(null)
 
   // Returns { ok: true, course } o { ok: false, message }
   const joinCourse = (rawKey) => {
@@ -89,21 +105,23 @@ export function AppProvider({ children }) {
     showToast('Submission removed')
   }
 
-  // Para sa presentation: ibalik sa simula
+  // Para sa presentation: ibalik courses at submissions sa simula (hindi nila-log out)
   const resetDemo = () => {
-    localStorage.removeItem(STORAGE_KEY)
     setCourses(initialCourses)
     setSubmissions({})
   }
 
   const value = {
-    student: { name: 'Pabs' },
+    user,
+    student: { name: 'Pabs', ...(user ?? {}) },
     courses,
     assignments,
     announcements,
     grades,
     services,
     submissions,
+    login,
+    logout,
     joinCourse,
     submitAssignment,
     removeSubmission,

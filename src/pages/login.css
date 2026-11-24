@@ -1,0 +1,100 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3);
+  position: relative;
+}
+
+.login-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: url('../assets/backgrounds/login-bg.jpg') center / cover no-repeat;
+  opacity: 0.25;
+  z-index: -1;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 6px solid var(--maroon);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.login-logo {
+  display: block;
+  width: 84px;
+  height: 84px;
+  margin: 0 auto var(--space-2);
+}
+
+.login-title {
+  text-align: center;
+  color: var(--maroon);
+  margin-bottom: var(--space-1);
+}
+
+.login-subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin: 0 0 var(--space-4);
+}
+
+.login-label {
+  display: block;
+  font-weight: 700;
+  margin: var(--space-3) 0 var(--space-1);
+}
+
+.login-help {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: var(--space-1) 0 0;
+}
+
+.login-detected {
+  color: var(--success);
+  font-weight: 700;
+  margin: var(--space-2) 0 0;
+}
+
+.password-row {
+  position: relative;
+}
+
+.password-row .field-input {
+  padding-right: 72px;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--maroon);
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+}
+
+.login-submit {
+  width: 100%;
+  margin-top: var(--space-4);
+}
+
+.login-demo-note {
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+  margin: var(--space-3) 0 0;
+}

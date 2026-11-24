@@ -1,0 +1,16 @@
+export const campuses = {
+  MN: 'PUP Sta. Mesa (Main)',
+  TG: 'PUP Taguig',
+  PQ: 'PUP Parañaque',
+  CM: 'PUP Quezon City (Commonwealth)',
+  SJ: 'PUP San Juan',
+  SM: 'PUP Sta. Maria (Bulacan)',
+  BN: 'PUP Biñan (Laguna)',
+  CL: 'PUP Calauan (Laguna)',
+  SP: 'PUP San Pedro (Laguna)',
+  SR: 'PUP Sta. Rosa (Laguna)',
+  ST: 'PUP Sto. Tomas (Batangas)',
+  MR: 'PUP Maragondon (Cavite)',
+  BS: 'PUP Bansud (Oriental Mindoro)',
+  RG: 'PUP Ragay (Camarines Sur)',
+}
